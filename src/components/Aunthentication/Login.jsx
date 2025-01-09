@@ -185,23 +185,30 @@ const Login = () => {
   };
 
   return (
-    <div className="relative flex flex-col-reverse md:flex-row h-screen overflow-hidden bg-cover bg-center">
-      <div className="absolute w-full h-full">
-        <img
-          src={Rside}
-          alt="R Side"
-          className="absolute left-0 top-[48px]"
-          style={{ height: "auto", maxWidth: "10%" }}
-        />
-        <img
-          src={Lside}
-          alt="L Side"
-          className="absolute right-[47rem] top-[60px] z-10"
-          style={{ height: "auto", maxWidth: "10%" }}
-        />
-      </div>
-
-      <div className={`w-full md:w-1/2 flex flex-col items-center mt-[28px] ${selectedLanguage.value === 'ar' || selectedLanguage.value === 'he' ? 'text-right' : ''}`}>
+    <div className="relative flex flex-col md:flex-row h-screen md:overflow-hidden sm:overflow-auto bg-cover bg-center">
+      <div
+        className={`w-full md:w-1/2 flex flex-col items-center relative mt-[28px] ${
+          selectedLanguage.value === "ar" || selectedLanguage.value === "he"
+            ? "text-right"
+            : ""
+        }`}
+      >
+        <div className="absolute left-0 top-8 h-32 ">
+          <img
+            src={Rside}
+            alt="R Side"
+            className="w-20 md:w-40"
+            // style={{ height: "auto", maxWidth: "10%" }}
+          />
+        </div>
+        <div className="absolute top-12 right-0 h-32 ">
+          <img
+            src={Lside}
+            alt="R Side"
+            className="w-20 md:w-40"
+            // style={{ height: "auto", maxWidth: "10%" }}
+          />
+        </div>
         <img src={logo} alt="Logo" className="mb-6 w-39" />
         <div className="flex items-center justify-center">
           <div className="font-sans font-[900] text-[34px] leading-[38.4px] text-center mb-2 ml-8">
@@ -256,7 +263,10 @@ const Login = () => {
           />
         </div>
 
-        <form className="w-full px-12 md:px-10 lg:px-24 2xl:px-40" onSubmit={handleSubmit}>
+        <form
+          className="w-full px-12 md:px-10 lg:px-24 2xl:px-40"
+          onSubmit={handleSubmit}
+        >
           <label
             htmlFor="email"
             className="flex justify-center font-sans font-[600] text-[14px] leading-[16.8px] text-gray-700 my-6"
@@ -272,9 +282,11 @@ const Login = () => {
               placeholder="Enter your Email"
               value={email}
               onChange={handleInputChange}
-              className={`w-full px-3 py-3 border ${error ? "border-red-500" : "border-gray-300"
-                } rounded-lg outline-none focus:ring-2 ${error ? "focus:ring-red-500" : "focus:ring-blue-500"
-                }`}
+              className={`w-full px-3 py-3 border ${
+                error ? "border-red-500" : "border-gray-300"
+              } rounded-lg outline-none focus:ring-2 ${
+                error ? "focus:ring-red-500" : "focus:ring-blue-500"
+              }`}
             />
           </div>
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
@@ -286,13 +298,13 @@ const Login = () => {
           </button>
         </form>
       </div>
-      <div className="w-full md:w-1/2 flex-shrink-0 mr-3 mt-4 pb-5">
+      <div className="w-full md:w-1/2 flex-shrink-0 mr-3 sm:order-first md:order-last">
         <img
           src={rightImage}
           alt="Decorative"
-          className="w-full h-[650px] object-cover sm:py-3"
+          className="w-full h-[670px] object-cover sm:pt-8"
         />
-      </div> 
+      </div>
     </div>
   );
 };

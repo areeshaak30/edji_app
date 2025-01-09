@@ -251,7 +251,7 @@ const EmailVerification = () => {
           </div>
         </div>
       </div>
-      <div className="lg:w-1/2 w-full order-first lg:order-last lg:overflow-visible">
+      {/* <div className="lg:w-1/2 w-full order-first lg:order-last lg:overflow-visible">
         <div className="h-full w-full">
           <img
             src={mailSide}
@@ -259,7 +259,14 @@ const EmailVerification = () => {
             className="w-full h-[550px] object-cover"
           />
         </div>
-      </div>
+      </div> */}
+      <div className="w-full md:w-1/2 flex-shrink-0 mr-3 sm:order-first md:order-last">
+              <img
+                src={mailSide}
+                alt="Decorative"
+                className="w-full h-[670px] object-cover sm:pt-8"
+              />
+            </div>
     </div>
   );
 };
